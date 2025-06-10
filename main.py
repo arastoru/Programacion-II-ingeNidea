@@ -4,4 +4,3 @@ print(f"--- Tabla del {num_tabla} ---")
 for i in range(1, 11):  # i tomará valores de 1 a 10
     resultado = num_tabla * i
     print(f"{num_tabla} x {i} = {resultado}")
-    
