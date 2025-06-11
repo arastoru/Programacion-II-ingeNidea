@@ -52,3 +52,13 @@ if ver_datos == '1':
     for rectangulo in rectangulos:
         numero, base, altura, area = rectangulo
         print(f"Rectángulo {numero}: Base = {base}, Altura = {altura}, Área = {area}")
+
+
+#Codigo bucle while
+contador = 0
+numero = int(input("Introduce un número entero: "))
+print("\nBucle while:")
+while contador < numero:  # la condición depende del número ingresado
+    print(f"Contador es: {contador}")
+    contador = contador + 1  # Actualiza la variable de control(contador)
+print("¡El bucle while ha terminado!")
