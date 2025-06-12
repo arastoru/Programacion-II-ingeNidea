@@ -143,3 +143,20 @@ while adivinanza != numero_secreto:
 
 # Mensaje (print)que aparece cuando el número fue adivinado
 print(f"¡Correcto! El número era {numero_secreto}. ¡Felicidades, adivinaste!")
+
+
+
+#Codigo lista de comidas bolivianas favoritas
+ # Crea una lista llamada comidas_favoritas con los nombres (strings) de tus 3 comidas bolivianas favoritas.
+comidas_favoritas = ["Pollo Frito", "Pique Macho", "Milanesa"]
+
+# Imprimimos la lista completa para verificar que se creó bien.
+print("Mi lista de comidas favoritas es:")
+print(comidas_favoritas)
+
+# Imprime un mensaje que diga: "Mi segunda comida favorita es: [el nombre de la segunda comida]".
+print(f"\nMi segunda comida favorita es: {comidas_favoritas[1]}")
+
+# Usamos len() al imprimir un mensaje 
+# len() nos dara la cantidad de elementos en la lista.
+print(f"Mi lista de comidas favoritas tiene {len(comidas_favoritas)} elementos.")
