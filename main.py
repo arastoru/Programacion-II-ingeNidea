@@ -63,6 +63,8 @@ while contador < numero:  # la condición depende del número ingresado
     contador = contador + 1  # Actualiza la variable de control(contador)
 print("¡El bucle while ha terminado!")
 
+
+
 #Codigo para lista actualizable de integrantes grupo Ingenidea
  # Primero creamos una lista vacía para los nombres de los estudiantes
 lista_nombres_estudiantes = [] #  lista
@@ -111,3 +113,33 @@ for nombre in lista_nombres_estudiantes:
     print(nombre)
 
 print("\n¡Estos son todos los miembros!")
+
+
+# Código del juego adivina el número secreto
+# El número secreto ahora es fijo: 6 pero puede ser cambiado por cualquier otro número entero.
+numero_secreto = 6
+
+print("¡Bienvenido al juego Adivina el Número Secreto!")
+print("Estoy pensando en el...")
+
+# Iniciamos la variable adivinanza con un valor diferente al número secreto para que el bucle WHILE se ejecute al menos una vez.
+adivinanza = 0 
+
+# Bucle que continua mientras la adivinanza no sea correcta
+while adivinanza != numero_secreto:
+    try:
+        # Pide al usuario que adivine el número.
+        adivinanza = int(input("Ingresa el número que crees que es el secreto: "))
+
+        # Aqui le damos una pista si el número no es correcto
+        if adivinanza > numero_secreto:
+            print("Demasiado alto. Intenta de nuevo.")
+        elif adivinanza < numero_secreto:
+            print("Demasiado bajo. Intenta de nuevo.")
+
+    except ValueError:
+        # Maneja el error si el usuario no ingresa un número entero (int)
+        print("Ingresa un número entero.")
+
+# Mensaje (print)que aparece cuando el número fue adivinado
+print(f"¡Correcto! El número era {numero_secreto}. ¡Felicidades, adivinaste!")
