@@ -62,3 +62,52 @@ while contador < numero:  # la condición depende del número ingresado
     print(f"Contador es: {contador}")
     contador = contador + 1  # Actualiza la variable de control(contador)
 print("¡El bucle while ha terminado!")
+
+#Codigo para lista actualizable de integrantes grupo Ingenidea
+ # Primero creamos una lista vacía para los nombres de los estudiantes
+lista_nombres_estudiantes = [] #  lista
+
+print("¡Bienvenidos integrantes del grupo Ingenidea!")
+
+# Bucle para añadir integrantes
+while True:
+    print("\nEscribe el nombre del nuevo integrante (o escribe 'salir' para terminar):")
+    nombre_nuevo = input("Ingresa el nombre: ").strip()
+
+    # Aqui finalizamos si el usuario desea terminar de registrar nombres
+    if nombre_nuevo.lower() in ["salir", "fin"]:
+        print("\nFinalizando el registro de integrantes...")
+        break
+
+    # Guardar el nombre del integrante anterior (si existe)
+    # Se actualizó el nombre de la lista
+    nombre_anterior = lista_nombres_estudiantes[-1] if lista_nombres_estudiantes else None
+
+    # Añadir el nuevo nombre a la lista
+    # Se actualizó el nombre de la lista
+    lista_nombres_estudiantes.append(nombre_nuevo)
+
+    # Mensaje de bienvenida
+    print(f"¡Bienvenid@ {nombre_nuevo} al grupo Ingenidea!")
+
+    # Mostrar detallitos
+    print("\n--- Detalles de incorporación ---")
+    print(f"Último integrante añadido: {nombre_nuevo}")
+    if nombre_anterior:
+        print(f"Integrante anterior: {nombre_anterior}")
+    else:
+        print("Este es el primer integrante añadido.")
+
+    # Mostramos la lista actualizada
+    print("\n--- Lista actualizada de integrantes ---")
+    # Se actualizó el nombre de la lista
+    for nombre in lista_nombres_estudiantes:
+        print(nombre)
+
+# Cuando terminen de ingresar los nombres damos print a la lista final
+print("\n--- Lista final de integrantes del grupo Ingenidea ---")
+# Se actualizó el nombre de la lista
+for nombre in lista_nombres_estudiantes:
+    print(nombre)
+
+print("\n¡Estos son todos los miembros!")
