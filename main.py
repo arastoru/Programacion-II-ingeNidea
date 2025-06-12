@@ -160,3 +160,25 @@ print(f"\nMi segunda comida favorita es: {comidas_favoritas[1]}")
 # Usamos len() al imprimir un mensaje 
 # len() nos dara la cantidad de elementos en la lista.
 print(f"Mi lista de comidas favoritas tiene {len(comidas_favoritas)} elementos.")
+
+
+
+#Codigo para calcular el promedio de notas
+# Creamos una lista llamada lista_mis_notas con las notas numéricas.
+lista_mis_notas = [60.5, 74, 80.5, 90.5,]
+# Creamos una variable suma_total inicializada en 0.
+suma_total = 0
+
+# Usamos un bucle for para recorrer lista_mis_notas.
+# En cada iteración, añade la nota actual a suma_total.
+for nota in lista_mis_notas:
+    suma_total = suma_total + nota 
+
+# Calcula el promedio: promedio = suma_total / len(lista_mis_notas).
+# len(lista_mis_notas) nos da la cantidad de elementos en la lista.
+promedio = suma_total / len(lista_mis_notas)
+
+# Imprime(print) la suma total y el promedio.
+print(f"Mis notas son: {lista_mis_notas}")
+print(f"La suma total de las notas es: {suma_total:.2f}") 
+print(f"El promedio de las notas es: {promedio:.2f}") # :.2f para mostrar dos decimales
