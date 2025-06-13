@@ -164,7 +164,7 @@ print(f"Mi lista de comidas favoritas tiene {len(comidas_favoritas)} elementos."
 
 
 #Codigo para calcular el promedio de notas
-# Creamos una lista llamada lista_mis_notas con las notas numéricas.
+# Creamos una lista llamada lista_mis_notas con las notas.
 lista_mis_notas = [60.5, 74, 80.5, 90.5,]
 # Creamos una variable suma_total inicializada en 0.
 suma_total = 0
@@ -184,7 +184,7 @@ print(f"La suma total de las notas es: {suma_total:.2f}")
 print(f"El promedio de las notas es: {promedio:.2f}") # :.2f para mostrar dos decimales
 
 
-# acumulador suma
+# acumulador sumar elementos
 def sumar_elementos(lista_numeros):
     acumulador_suma = 0
     for numero in lista_numeros:
@@ -195,3 +195,27 @@ resultado_suma = sumar_elementos(mis_numeros)
 
 print(f"La lista de números es: {mis_numeros}")
 print(f"La suma total es: {resultado_suma}")
+
+
+
+#Codigo encontrar mayor o numero mas grande en lista
+lista_numeros_grande = [45, 12, 78, 33, 90, 67, 21]
+if not lista_numeros_grande:
+    print("La lista está vacía, no se puede encontrar el número más grande.")
+else:
+    mayor_temporal = lista_numeros_grande[0]
+    for i in range(1, len(lista_numeros_grande)):
+        elemento_actual = lista_numeros_grande[i]
+        if elemento_actual > mayor_temporal:
+            mayor_temporal = elemento_actual
+    print(f"\nLa lista de números es: {lista_numeros_grande}")
+    print(f"El número más grande en la lista es: {mayor_temporal}")
+
+
+
+#Codigo de Invertir lista con range, append
+def invertir_lista(lista_original):
+    lista_invertida = []
+    for i in range(len(lista_original) - 1, -1, -1):
+        lista_invertida.append(lista_original[i])
+    return lista_invertida
