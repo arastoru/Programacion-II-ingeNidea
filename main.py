@@ -307,3 +307,9 @@ if indice_1 != -1:
     print(f"La clave {clave_buscada_1} se encontró en el índice: {indice_1}")
 else:
     print(f"La clave {clave_buscada_1} no se encontró en la lista.")
+
+
+
+
+#xd
+
