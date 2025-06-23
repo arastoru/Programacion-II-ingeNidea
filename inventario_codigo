@@ -1,0 +1,131 @@
+Proceso InventarioDeProductos
+	Definir productos Como Cadena;
+	Definir cantidades Como Entero;
+	Definir indice, x1, seleccion Como Entero;
+	Definir opciones, cantidad Como Entero;
+	Definir nombreProducto, buscarProducto Como Cadena;
+	Definir resultado Como Logico;
+	Definir encontrado Como Lógico;
+	Dimensionar productos(100);
+	Dimensionar cantidades(100);
+	indice <- 0;
+	seleccion <- 0;
+	Mientras seleccion <> 999 Hacer
+		// Menú de opciones
+		Escribir '     ***************************************';
+		Escribir '     *         Menú de Inventario           *';
+		Escribir '     ***************************************';
+		Escribir '     1. Agregar nuevo producto';
+		Escribir '     2. Mostrar todos los productos';
+		Escribir '     3. Buscar un producto';
+		Escribir '     4. Actualizar cantidad de un producto';
+		Escribir '     5. Salir';
+		Escribir '     ***************************************';
+		Escribir 'Ingrese una opción (del 1 al 5):';
+		Leer opciones;
+		Según opciones Hacer
+			1:
+				// Agregar nuevo producto
+				Escribir 'Ingrese el nombre del producto:';
+				Leer nombreProducto;
+				Escribir 'Ingrese la cantidad del producto:';
+				Leer cantidad;
+				indice <- indice+1;
+				productos[indice] <- nombreProducto;
+				cantidades[indice] <- cantidad;
+				Escribir '     ***************************************';
+				Escribir '     * Producto agregado correctamente !   *';
+				Escribir '     ***************************************';
+				Escribir ' ';
+			2:
+				// Mostrar todos los productos
+				Borrar Pantalla;
+				Escribir ' *******************************************';
+				Escribir '             LISTADO DE PRODUCTOS           ';
+				Escribir ' *******************************************';
+				Escribir ' Item         Producto           Cantidad ';
+				Escribir ' -------------------------------------------';
+				Para x1<-1 Hasta indice Con Paso 1 Hacer
+					Escribir "(",x1,")       ",productos[x1], '           ', cantidades[x1];
+				FinPara
+				Escribir ' -------------------------------------------';
+				Escribir "Presione una tecla para continuar...";
+				esperar tecla;
+				Borrar Pantalla;
+			3:
+				// Buscar un producto
+				Escribir 'Ingrese el nombre del producto a buscar:';
+				Leer buscarProducto;
+				encontrado <- Falso;
+				Borrar Pantalla;
+				Escribir ' *******************************************';
+				Escribir '           RESULTADO DE LA BUSQUEDA         ';
+				Escribir ' *******************************************';
+				Escribir '  Item       Producto           Cantidad ';
+				Escribir ' -------------------------------------------';
+				Para x1<-1 Hasta indice Con Paso 1 Hacer
+					
+					Si productos[x1]=buscarProducto Entonces
+						Escribir  "(",x1,")   ",productos[x1], '                     ', cantidades[x1];
+						encontrado <- Verdadero;
+						
+					FinSi
+					
+				FinPara
+				Escribir ' -------------------------------------------';
+				Si  NO encontrado Entonces
+					Escribir '     ***************************************';
+					Escribir '     *    Producto no encontrado !!!!      *';
+					Escribir '     ***************************************';
+				FinSi
+				Escribir "Presione una tecla para continuar...";
+				esperar tecla;
+				Borrar Pantalla;
+			4:
+				// Actualizar cantidad de un producto
+				Escribir 'Ingrese el nombre del producto a actualizar:';
+				Leer buscarProducto;
+				encontrado <- Falso;
+				Borrar Pantalla;
+				Para x1<-1 Hasta indice Con Paso 1 Hacer
+					Si productos[x1]=buscarProducto Entonces
+						Escribir "Se ha encontrado el producto: ",buscarProducto;
+						Escribir 'Ingrese la nueva cantidad para el producto con nro de item:',"(",x1,") :";
+						Leer cantidad;
+						cantidades[x1] <- cantidad;
+						Escribir '     ***************************************';
+						Escribir '        Cantidad actualizada correctamente.';
+						Escribir '     ***************************************';
+						Escribir ' ';
+						encontrado <- Verdadero;
+					FinSi
+				FinPara
+				Si  NO encontrado Entonces
+					Escribir '     ***************************************';
+					Escribir '              Producto no encontrado.';
+					Escribir '     ***************************************';
+				FinSi
+				Escribir "Presione una tecla para continuar...";
+				esperar tecla;
+				Borrar Pantalla;
+			5:
+				// Salir
+				Borrar Pantalla;
+				Escribir '*****************************************************************';
+				Escribir '*          GRACIAS POR UTILIZAR UPDS-INVENTARIOS V1.0.          *';
+				Escribir '*                                                               *';
+				Escribir '*                    PROGRAMACION BÁSICA UPDS                   *';
+				Escribir '*                       COPYRIGHT  @2025                        *';
+				Escribir '*                                                               *';
+				Escribir '*****************************************************************';
+				seleccion <- 999;
+			De Otro Modo:
+				Borrar Pantalla;
+				Escribir '*****************************************************************';
+				Escribir '          Opción inválida, por favor intente de nuevo.';
+				Escribir '*****************************************************************';
+				
+		FinSegún
+		
+	FinMientras
+FinProceso
