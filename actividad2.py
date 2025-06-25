@@ -475,6 +475,8 @@ if __name__ == "__main__":
 print("\nPrograma realizado por Franz Almanza")
 
 
+
+
 #Codigo Transponer una Matriz
 def transponer_matriz(matriz):
   if not matriz or not matriz[0]:
@@ -506,6 +508,8 @@ print("¡Prueba 1 (2x3) pasada! ✅")
 
 
 
+
+#Codigo matriz identidad
 def es_identidad(matriz):
     # Requisito 1: Debe ser cuadrada
     num_filas = len(matriz)
@@ -539,6 +543,10 @@ assert es_identidad(no_cuadrada) == False
 
 print("¡Pruebas para es_identidad pasaron! ✅")
 
+
+
+
+#Codigo Matriz Simetrica
 def es_simetrica(matriz):
     # Requisito 1: Debe ser cuadrada
     num_filas = len(matriz)
